@@ -83,7 +83,13 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service
 
 PRODUCT_PACKAGES += \
-    libdrm.vendor
+    libdrm.vendor \
+    libutils-v32
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
