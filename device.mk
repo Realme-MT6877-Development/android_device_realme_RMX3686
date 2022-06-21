@@ -33,7 +33,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl \
     android.hardware.boot@1.1-impl.recovery \
-    android.hardware.boot@1.1-mtkimpl.recovery
+    android.hardware.boot@1.2-mtkimpl.recovery
 
 PRODUCT_PACKAGES += \
     bootctrl.mt6877 \
