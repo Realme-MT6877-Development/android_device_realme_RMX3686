@@ -1,5 +1,9 @@
 # Unpinned blobs from sys_mssi_64_cn_armv82-user 13 TP1A.220905.001 1693542148431 release-keys
 
+# AEE
+vendor/lib/libaedv.so
+vendor/lib64/libaedv.so
+
 # Audio
 vendor/lib/hw/audio.primary.mt6877.so
 vendor/lib/hw/audio.r_submix.mt6877.so
