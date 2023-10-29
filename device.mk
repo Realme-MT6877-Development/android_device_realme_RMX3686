@@ -265,7 +265,9 @@ PRODUCT_BOOT_JARS += \
     mediatek-ims-common \
     mediatek-telecom-common \
     mediatek-telephony-base \
-    mediatek-telephony-common
+    mediatek-telephony-common \
+    oplus-framework \
+    oplus-framework-telephony
 
 PRODUCT_PACKAGES += \
     libshim_sink
