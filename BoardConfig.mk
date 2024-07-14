@@ -121,6 +121,9 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # SELinux
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2023-08-05
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
