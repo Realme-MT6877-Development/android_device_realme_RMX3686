@@ -72,6 +72,11 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
     libbluetooth_audio_session
 
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.device@3.6.vendor \
+    android.hardware.camera.provider@2.6.vendor
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@4.0.vendor \
@@ -167,7 +172,8 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-mediatek
+    android.hardware.power-service-mediatek \
+    android.hardware.power@1.3.vendor
 
 PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.2.vendor
