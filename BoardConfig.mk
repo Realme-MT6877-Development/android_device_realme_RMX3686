@@ -42,6 +42,9 @@ TARGET_NO_BOOTLOADER := true
 # Display
 TARGET_SCREEN_DENSITY := 440
 
+# UDFPS
+TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/oplus:libudfps_extension.oplus
+
 # Kernel
 BOARD_DTB_OFFSET := 0x07c0800
 BOARD_KERNEL_BASE := 0x40078000
