@@ -1081,10 +1081,7 @@ vendor/bin/mtk_agpsd
 vendor/etc/gnss/agps_profiles_conf2.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_CMCC.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_CT.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_CU.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Claro_Colombia.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Claro_Peru.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Entel_Peru.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_KDDI.xml
