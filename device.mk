@@ -184,6 +184,9 @@ PRODUCT_PACKAGES += \
    TetheringResOverlayRMX3686 \
    WifiOverlay
 
+PRODUCT_PACKAGES += \
+   LineageSDKRMX3686
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
