@@ -1339,6 +1339,9 @@ vendor/lib64/libwpfa.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 
+# Public libraries
+vendor/etc/public.libraries.txt
+
 # Radio (IMS)
 vendor/bin/hw/vtservice_hidl
 vendor/bin/rcs_volte_stack
