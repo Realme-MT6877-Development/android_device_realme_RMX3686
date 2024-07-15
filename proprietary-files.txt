@@ -427,6 +427,7 @@ odm/lib/libCamera_s5khm6spmipiraw22693_portrait_capture_full.so
 odm/lib/libCamera_s5khm6spmipiraw22693_zHDR_Face_Capture.so
 odm/lib/libCamera_s5khm6spmipiraw22693_zHDR_Scene_Capture.so
 odm/lib/libCamera_s5khm6spmipiraw22693_zmHDR_Capture.so
+vendor/lib/libdre.so
 odm/lib64/libCamera_gc02m1mipiraw22693_Capture_Preview.so
 odm/lib64/libCamera_gc02m1mipiraw22693_Scene_Capture.so
 odm/lib64/libCamera_imx355mipiraw22693_3rd_Capture_720P.so
@@ -873,7 +874,9 @@ vendor/lib64/libmtkcam_tuning_utils.so
 vendor/lib64/libmtkcam_ulog.so
 vendor/lib64/libmtkisp_metadata.so
 vendor/lib64/libstereoinfoaccessor_vsdof.so
+vendor/lib64/libdre.so
 vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
+vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
 
 vendor/lib64/vendor.mediatek.hardware.camera.atms@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.ccap@1.0.so
