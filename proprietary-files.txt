@@ -1007,6 +1007,12 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.7.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 
+# Display (Pixelworks)
+lib64/vendor.pixelworks.hardware.feature@1.1.so
+system_ext/lib/vendor.pixelworks.hardware.display@1.0.so
+system_ext/lib64/vendor.pixelworks.hardware.display@1.0.so
+system_ext/lib64/vendor.pixelworks.hardware.feature@1.0.so
+
 # DRM
 odm/lib64/liboemcrypto.so
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
