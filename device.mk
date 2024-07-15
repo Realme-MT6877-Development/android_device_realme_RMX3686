@@ -284,7 +284,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.multihal \
+    android.hardware.sensors@2.1-service.RMX3686-multihal \
     android.frameworks.sensorservice@1.0.vendor \
     libsensorndkbridge
 
