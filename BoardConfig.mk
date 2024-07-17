@@ -21,7 +21,7 @@ AB_OTA_PARTITIONS := \
     vbmeta_system \
     vbmeta_vendor \
     vendor \
-	odm
+    odm
 
 # Architecture
 TARGET_ARCH := arm64
@@ -75,6 +75,9 @@ BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+
+TARGET_KERNEL_CLANG_VERSION := proton
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton
 
 TARGET_KERNEL_CONFIG := RM6877_defconfig
 TARGET_KERNEL_SOURCE := kernel/realme/RMX3686
