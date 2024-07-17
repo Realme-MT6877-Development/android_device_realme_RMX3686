@@ -88,7 +88,7 @@ TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := RMX3686,RE58A5L1
 
-Partitions
+#Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 41943040
 BOARD_DTBOIMG_PARTITION_SIZE := 1392640
@@ -137,7 +137,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # SELinux
-include device/mediatek/sepolicy_vndr/SEPolicy.mk
+#include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2023-08-05

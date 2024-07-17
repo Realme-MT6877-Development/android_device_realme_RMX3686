@@ -10,7 +10,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     com.android.hardware.boot \
     android.hardware.boot-service.default_recovery
 
@@ -34,7 +34,7 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-mtkimpl \
     android.hardware.boot@1.2-mtkimpl.recovery
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     bootctrl.mt6877 \
     bootctrl.mt6877.recovery
 
@@ -117,8 +117,8 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
-    android.hardware.drm@1.4.vendor \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
+    android.hardware.drm@1.4.vendor 
+    #libprotobuf-cpp-lite-3.9.1-vendorcompat
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -138,7 +138,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor
 
 # Health
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.health-service.mediatek \
     android.hardware.health-service.mediatek-recovery
 
@@ -165,7 +165,7 @@ PRODUCT_PACKAGES += \
     libsoft_attestation_cert.vendor
 
 # Lights
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.light-service.oplus
 
 # Lineage Health
@@ -195,6 +195,9 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
+#PRODUCT_PACKAGES += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_PACKAGES += \
    FrameworksResOverlayRMX3686 \
@@ -204,8 +207,8 @@ PRODUCT_PACKAGES += \
    WifiOverlay
 
 PRODUCT_PACKAGES += \
-   LineageSDKRMX3686
-   LineageDialerRMX3686
+   LineageSDKRMX3686 \
+   #LineageDialerRMX3686
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -253,7 +256,6 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.lineage-libperfmgr \
     vendor.mediatek.hardware.mtkpower@1.2-service.stub \
     libmtkperf_client_vendor \
     libmtkperf_client
@@ -282,8 +284,8 @@ PRODUCT_BOOT_JARS += \
     mediatek-telecom-common \
     mediatek-telephony-base \
     mediatek-telephony-common \
-    oplus-framework \
-    oplus-framework-telephony
+#    oplus-framework \
+#    oplus-framework-telephony
 
 PRODUCT_PACKAGES += \
     libshim_sink
@@ -332,7 +334,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek
 
 # Thermal
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.thermal-service.mediatek
 
 PRODUCT_COPY_FILES += \
@@ -341,15 +343,20 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb-service.mediatek \
-    android.hardware.usb.gadget-service.mediatek
+    android.hardware.usb@1.0.vendor \
+    android.hardware.usb@1.1.vendor \
+    android.hardware.usb@1.2.vendor \
+    android.hardware.usb@1.3.vendor \
+    android.hardware.usb.gadget@1.0.vendor \
+    android.hardware.usb.gadget@1.1.vendor
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi-service \
-    hostapd \
-    libwifi-hal-wrapper \
-    wpa_supplicant
+    android.hardware.wifi@1.5.vendor \
+    android.hardware.wifi.hostapd@1.3.vendor \
+    android.hardware.wifi.supplicant@1.4.vendor \
+    android.hardware.tetheroffload.config@1.0.vendor \
+    android.hardware.tetheroffload.control@1.1.vendor
 
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0.vendor \
