@@ -317,7 +317,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/oplus \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/lineage/interfaces/power-libperfmgr
+    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/mediatek
 
 # Thermal
 PRODUCT_PACKAGES += \
