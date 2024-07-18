@@ -294,16 +294,19 @@ PRODUCT_COPY_FILES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.mt6877 \
     fstab.mt6877.ramdisk \
+    fstab.mt6877 \
+    init.cgroup.rc \
+    init.connectivity.common.rc \
     init.connectivity.rc \
+    init_connifra.rc \
     init.modem.rc \
-    init.mt6877.rc \
     init.mt6877.power.rc \
+    init.mt6877.rc \
     init.mt6877.usb.rc \
     init.project.rc \
-    init.target.rc \
     init.sensor_2_0.rc \
+    init.target.rc \
     ueventd.mtk.rc
 
 PRODUCT_PACKAGES += \

@@ -1,0 +1,100 @@
+import /init.recovery.trustonic.rc
+import /tee.rc
+import /mtk-plpath-utils.rc
+
+on init
+    setprop sys.usb.configfs 1
+    setprop sys.usb.ffs.aio_compat 1
+    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw:/system/lib64/hw
+    mkdir /mnt/vendor/persist 0771 system system
+
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+    write /sys/module/musb_hdrc/parameters/mu3d_force_on 1
+
+    write /sys/class/power_supply/usb/otg_switch 1
+    write /sys/class/oplus_chg/usb/otg_switch 1
+    
+on late-fs
+    # Mount RW partitions which need run fsck
+    mount_all /first_stage_ramdisk/fstab.mt6877 --late
+
+on fs && property:ro.debuggable=0
+    # distinguish USB shoulde connect or not, i.e. CDP vs SDP
+    write /sys/class/udc/musb-hdrc/device/cmode 1
+    # set charging free due to it wait for USB activation
+    start adbd
+
+on post-fs
+    exec u:r:update_engine:s0 root root -- /system/bin/mtk_plpath_utils
+
+on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    install_keyring
+
+service keystore_auth /system/bin/keystore_auth
+    oneshot
+    user system
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service keystore2 /system/bin/keystore2 /tmp/misc/keystore
+    class early_hal
+    user root
+    group keystore readproc log
+    disabled
+    seclabel u:r:recovery:s0
+
+service hal_cryptoeng_oplus /system/bin/hw/vendor.oplus.hardware.cryptoeng@1.0-service
+    interface aidl vendor.oplus.hardware.cryptoeng.ICryptoeng/default
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+    interface android.hardware.gatekeeper@1.0::IGatekeeper default
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.keymaster-4-1-trustonic /vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+on property:vendor.sys.listener.registered=true
+    start mobicore
+    start vendor.gatekeeper-1-0
+    start vendor.keymaster-4-1-trustonic
+    start hal_cryptoeng_oplus
+   
+on property:hwservicemanager.ready=true
+    start mobicore
+    start vendor.keymaster-4-1-trustonic
+    start vendor.gatekeeper-1-0
+    start hal_cryptoeng_oplus
+
+on property:ro.crypto.state=unsupported
+    stop mobicore
+    stop vendor.keymaster-4-1-trustonic
+    stop vendor.gatekeeper-1-0
+    stop hal_cryptoeng_oplus
+
+on property:ro.crypto.state=unencrypted
+    stop mobicore
+    stop vendor.keymaster-4-1-trustonic
+    stop vendor.gatekeeper-1-0
+    stop hal_cryptoeng_oplus
+        
+on property:twrp.all.users.decrypted=true
+    stop mobicore
+    stop vendor.keymaster-4-1-trustonic
+    stop vendor.gatekeeper-1-0
+    stop hal_cryptoeng_oplus
+
+on boot
+    start boot-hal-1-2
+    start health-hal-2-1
